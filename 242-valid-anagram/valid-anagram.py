@@ -4,17 +4,9 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        count = defaultdict(int)
-
-        # Mapping elements in string s
-        for ch in s:
-            count[ch] += 1
-
-        # Checking if elements of s are present in t
-        for ch in t:
-            if count[ch] == 0:
+        for ch in set(s):
+            if s.count(ch) != t.count(ch):
                 return False
-            count[ch] -= 1
 
         return True
         
