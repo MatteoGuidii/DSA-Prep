@@ -10,6 +10,12 @@ class Solution:
             for c in range(n):
                 value = board[r][c]
                 if value != '.':
+
+                    # Compute which 3×3 box we're in:
+                    # (r//3) is 0 for rows 0–2, 1 for rows 3–5, 2 for rows 6–8
+                    # (c//3) is 0 for cols 0–2, 1 for cols 3–5, 2 for cols 6–8
+                    # multiply the row-block by 3 to jump to box indices 0,3,6
+                    # then add the col-block (0,1,2) to land in the correct box (0–8)
                     b = (r // 3) * 3 + (c // 3)
 
                     if value in rows[r] or value in columns[c] or value in boxes[b]:
