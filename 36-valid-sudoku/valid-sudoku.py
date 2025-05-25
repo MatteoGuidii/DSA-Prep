@@ -26,3 +26,11 @@ class Solution:
                     boxes[b].add(value)
 
         return True
+
+# Time Complexity:
+#   – O(1) for the fixed 9×9 board: we do 9×9 = 81 iterations, each doing O(1) work → O(81) = O(1).
+#   – If generalized to an N×N board, it would be O(N²): two nested loops over N rows and N cols, each with O(1) set ops.
+#
+# Space Complexity:
+#   – O(1) for the fixed 9×9 board: at most 9 sets × 3 × 9 entries = 243 entries total → constant.
+#   – If generalized to an N×N board, it would be O(N²): 3 groups (rows, cols, boxes) of N sets, each holding up to N items → O(3N²) = O(N²).
